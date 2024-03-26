@@ -1,7 +1,24 @@
 import React from "react";
+import { useDrag, useDrop } from "react-dnd";
+import { ItemTypes } from "./ItemTypes";
 
 export default function CatSprite() {
+  const [{ isDragging }, drag] = useDrag({
+    type: ItemTypes.CAT_SPRITE,
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
+
+
   return (
+    <div 
+    ref={drag}
+      style={{
+        opacity: isDragging ? 0.5 : 1,
+        cursor: "move",
+      }}
+        >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="95.17898101806641"
@@ -180,5 +197,6 @@ export default function CatSprite() {
         </g>
       </g>
     </svg>
+    </div>
   );
 }
