@@ -33,7 +33,7 @@ export default function MidArea({ onDropElement }) {
         alignItems: 'center', 
         flexDirection: 'column' 
         }}>
-      <h1>MidArea</h1>
+      <h1>Drop elements here</h1>
       
       {droppedElements.map((element, index) => (
         <div
