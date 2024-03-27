@@ -11,7 +11,7 @@
   "namespace": true,
   "ppx-flags": [],
   "package-specs": {
-    "module": "es6",
+    "module": "esnp6",
     "in-source": true
   },
   "bs-dependencies": ["@rescript/react", "bs-webapi", "bs-fetch"]
