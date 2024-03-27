@@ -22,6 +22,7 @@ export default function Sidebar({onMotionElementClick, onLooksElementClick}) {
       </div>
       
       <div className="font-bold text-xl mt-6 mb-4"> {"Motion"} </div>
+      <div > {"Click the Motion elements"} </div>
         {motionElements.map((element, index) => (
           <div key={index} >
           <MotionElement element={element.text} index={index} styles={element.styles} onMotionElementClick={() => onMotionElementClick(index)} />
