@@ -18,7 +18,7 @@ export default function MidArea({ onDropElement }) {
     }),
   });
   
-  const handleRemoveElement = (indexToRemove) => {
+  const RemoveElementHandler = (indexToRemove) => {
     console.log("Removed", indexToRemove)
     setDroppedElements((prevElements) => prevElements.filter((_, index) => index !== indexToRemove));
   };
@@ -39,7 +39,7 @@ export default function MidArea({ onDropElement }) {
         <div
           key={index}
           className={`flex flex-row flex-wrap ${element.styles.backgroundColor} ${element.styles.textColor} ${element.styles.padding} ${element.styles.margin} ${element.styles.fontSize} ${element.styles.cursor} ${element.styles.rounded}`}
-          onMouseEnter={() => handleRemoveElement(index)}>
+          onMouseEnter={() => RemoveElementHandler(index)}>
           {element.text}</div>
       ))}
     </div>

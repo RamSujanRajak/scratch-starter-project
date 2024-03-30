@@ -12,7 +12,7 @@ export const LooksElement = ({ element, styles, onLooksElementClick }) => {
   });
 
 
-  const handleClick = () => {
+  const ClickHandler = () => {
     console.log(`Looks "${element}"  Element is clicked`);
     onLooksElementClick(); 
   };
@@ -23,7 +23,7 @@ export const LooksElement = ({ element, styles, onLooksElementClick }) => {
       ref={drag}
       className={`flex flex-row flex-wrap ${styles?.backgroundColor} ${styles?.textColor} ${styles?.padding} ${styles?.margin} ${styles?.fontSize} ${styles?.cursor} ${styles?.rounded}`}
       style={{ opacity: isDragging ? 0.5 : 1 }}
-      onClick={handleClick} 
+      onClick={ClickHandler} 
     >
       {element}
     </div>
