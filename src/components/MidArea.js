@@ -1,25 +1,33 @@
 import React, { useState } from "react";
 import { useDrop } from "react-dnd";
-import { ItemTypes } from "./ItemTypes";
+import { ItemTypes } from "./ItemTypes";// Import ItemTypes for drag and drop type definitions
 
 export default function MidArea({ onDropElement }) {
+  // State to store dropped elements
   const [droppedElements, setDroppedElements] = useState([]);
 
+  // Use the useDrop hook to handle drag and drop events on the MidArea
   const [{ isOver }, drop] = useDrop({
+    // Accept elements of types MOTION_ELEMENT and LOOKS_ELEMENT
     accept: [ItemTypes.MOTION_ELEMENT, ItemTypes.LOOKS_ELEMENT],
+    // Triggered when an element is dropped
     drop: (item) => {
-      console.log("Dropped:", item.element);
+      console.log("Dropped item:", item.element); // Log the dropped element's text
+      // Update state with the dropped element's text and styles
       setDroppedElements((prevElements) => [...prevElements, { text: item.element, styles: item.styles }]);
-      
+      // Call the provided onDropElement function with the dropped element data (text and styles)
       onDropElement({ text: item.element, styles: item.styles });
     },
+    // Collect information about the drop target (MidArea)
     collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
+      isOver: !!monitor.isOver(), // Set isOver based on whether an element is hovering over the MidArea
     }),
   });
   
+  // Function to remove a dropped element by index
   const RemoveElementHandler = (indexToRemove) => {
-    console.log("Removed", indexToRemove)
+    console.log("Removed element at index:", indexToRemove); // Log the removed element's index
+    // Filter out the element at the given index from the droppedElements state
     setDroppedElements((prevElements) => prevElements.filter((_, index) => index !== indexToRemove));
   };
 

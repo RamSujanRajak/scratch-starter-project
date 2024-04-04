@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from './Icon';
 
 const EventElement = ({ text, icon }) => {
+    // This component will be used to render a single event element
   return (
     <div className="flex flex-row flex-wrap bg-yellow-500 rounded min-w-max w-max text-white px-2 py-1 my-2 text-sm cursor-pointer">
       {text}

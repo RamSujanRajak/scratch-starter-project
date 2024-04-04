@@ -23,6 +23,7 @@ return (
         height: "100%",
       }}>
 
+        {/* Container for the cat and messages */}
       <div
         style={{
           left: catPosition,
@@ -32,27 +33,31 @@ return (
           position: "absolute",
           cursor: "grab",
         }}>
-
+          {/* Render the CatSprite component */}
         <CatSprite />
 
+        {/* Conditionally render the "Hello" message */}
         {showHelloMessage && (
           <h1 style={{ position: "absolute", top: "20%", left: "180%",  zIndex: 10,}} className="absolute top-1/5 left-1/10 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-2 rounded min-w-max w-max">
             Hello buddy
           </h1>
         )}
 
+        {/* Conditionally render the "Say Hello" message */}
         {showSayHelloMessage && (
           <h1 style={{ position: "absolute", top: "20%", left: "180%" }} className="absolute top-1/5 left-1/10 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-2 rounded min-w-max w-max">
             Say hello
           </h1>
         )}
 
+        {/* Conditionally render the "Think Hmm..." message for 2 seconds */}
         {ThinkHmmFor2Sec && (
           <h1 style={{ position: "absolute", top: "20%", left: "180%" }} className="absolute top-1/5 left-1/10 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-2 rounded min-w-max w-max">
             Think Hmm....
           </h1>
         )}
 
+        {/* Conditionally render the "Think Hmm..." message for 10 seconds */}
         {ThinkHmm && (
           <h1 style={{ position: "absolute", top: "20%", left: "180%" }} className="absolute top-1/5 left-1/10 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-2 rounded min-w-max w-max">
             Think Hmm....
@@ -61,7 +66,7 @@ return (
 
       </div>
 
-
+      {/* Button to trigger a function (likely for random positioning) */}
       <button 
         onClick={handleFourthElementClick}
         style={{ position: "absolute", top: "10px", right: "10px" }}

@@ -1,27 +1,32 @@
-import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import MidArea from "./components/MidArea";
-import PreviewArea from "./components/PreviewArea";
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import React, { useState } from "react"; // Import React and useState hook for state management
+
+import Sidebar from "./components/Sidebar"; // Import the Sidebar component
+import MidArea from "./components/MidArea"; // Import the MidArea component
+import PreviewArea from "./components/PreviewArea"; // Import the PreviewArea component
+import { DndProvider } from 'react-dnd'; // Import DndProvider from react-dnd for drag and drop
+import { HTML5Backend } from 'react-dnd-html5-backend'; // Import HTML5Backend for HTML5 drag and drop support
 
 export default function App() {
 
-  const [elements, setElements] = useState([]);
-  const [catPosition, setCatPosition] = useState(0);
-  const [catRotationLeft, setCatRotationLeft] = useState(0);
-  const [catRotationRight, setCatRotationRight] = useState(0);
-  const [randomPosition, setRandomPosition] = useState({ x: 0, y: 0 });
-  const [showHelloMessage, setShowHelloMessage] = useState(false);
-  const [showSayHelloMessage, setShowSayHelloMessage] = useState(false);
-  const [showThinkHmmFor2Sec, setShowThinkHmmFor2Sec] = useState(false);
-  const [showThinkHmm, setShowThinkHmm] = useState(false);
+  // State variables for application state
+  const [elements, setElements] = useState([]); // Array to store dropped elements
+  const [catPosition, setCatPosition] = useState(0); // Cat's position on the X-axis
+  const [catRotationLeft, setCatRotationLeft] = useState(0); // Cat's rotation angle (left)
+  const [catRotationRight, setCatRotationRight] = useState(0); // Cat's rotation angle (right)
+  const [randomPosition, setRandomPosition] = useState({ x: 0, y: 0 }); // Position for random movement
+  const [showHelloMessage, setShowHelloMessage] = useState(false); // Flag for showing "Hello" message
+  const [showSayHelloMessage, setShowSayHelloMessage] = useState(false); // Flag for showing "Say Hello" message
+  const [showThinkHmmFor2Sec, setShowThinkHmmFor2Sec] = useState(false); // Flag for showing "Hmm" 
+  const [showThinkHmm, setShowThinkHmm] = useState(false); // Flag for showing "Hmm" 
 
+  // Function to handle element drop in MidArea
   const handleDropElement = (element) => {
-    setElements([...elements, element]);
+    setElements([...elements, element]); // Add dropped element to the state array
   };
 
+  // Function to handle clicks on Motion Elements in Sidebar
   const handleMotionElement = (index, newPosition) => {
+    // Update state based on the clicked Motion Element index
     if (index === 0) {
       setCatPosition((prevPosition) => prevPosition + 10);
     } 
@@ -36,7 +41,10 @@ export default function App() {
     }
   };
 
+
+// Function to handle clicks on Looks Elements in Sidebar
   const handleLooksElement = (index) => {
+  // Update state to show temporary messages based on the clicked Looks Element index
     if (index === 0) {
       setShowHelloMessage(true);
       setTimeout(() => {

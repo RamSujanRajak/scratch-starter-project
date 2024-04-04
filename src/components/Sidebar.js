@@ -1,13 +1,20 @@
-import React from "react";
+import React from "react"; // Import the React library for building user interfaces
 
-import EventElement from "./EventElement";
+import EventElement from "./EventElement"; // Import the EventElement component for rendering event buttons
 
-import { motionElements } from './Motionelements';
-import { looksElements } from './Lookselements';
+import { motionElements } from './Motionelements'; // Import an array of motion elements (likely data for rendering)
+import { looksElements } from './Lookselements'; // Import an array of look elements (likely data for rendering)
 
-import { MotionElement } from './MotionElement';
-import { LooksElement } from './Lookselement';
+import { MotionElement } from './MotionElement'; // Import the MotionElement component for rendering motion elements
+import { LooksElement } from './Lookselement'; // Import the LooksElement component for rendering look elements
 
+/**
+ * Sidebar component that displays event buttons, motion elements, and look elements.
+ *
+ * Props:
+ *  - onMotionElementClick: Function to be called when a motion element is clicked.
+ *  - onLooksElementClick: Function to be called when a look element is clicked.
+ */
 
 export default function Sidebar({ onMotionElementClick, onLooksElementClick }) {
   
