@@ -34,12 +34,13 @@ export default function MidArea({ onDropElement }) {
         flexDirection: 'column' 
         }}>
       <h1>Drop elements here</h1>
+      <h1>clcik element to remove </h1>
       
       {droppedElements.map((element, index) => (
         <div
           key={index}
           className={`flex flex-row flex-wrap ${element.styles.backgroundColor} ${element.styles.textColor} ${element.styles.padding} ${element.styles.margin} ${element.styles.fontSize} ${element.styles.cursor} ${element.styles.rounded}`}
-          onMouseEnter={() => RemoveElementHandler(index)}>
+          onClick={() => RemoveElementHandler(index)}>
           {element.text}</div>
       ))}
     </div>
